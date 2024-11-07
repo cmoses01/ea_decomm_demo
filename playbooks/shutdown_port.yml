@@ -1,0 +1,12 @@
+---
+- name: Shutdown Port Task
+  hosts: localhost
+  tasks:
+    - name: Simulate shutdown port task success
+      debug:
+        msg: "Shutdown port task succeeded"
+      register: result
+
+    - name: Return success
+      set_fact:
+        task_success: "{{ result is succeeded }}"

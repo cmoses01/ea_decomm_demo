@@ -1,0 +1,12 @@
+---
+- name: Remove DNS Record Task
+  hosts: localhost
+  tasks:
+    - name: Simulate remove DNS A record task success
+      debug:
+        msg: "Remove DNS A record task succeeded"
+      register: result
+
+    - name: Return success
+      set_fact:
+        task_success: "{{ result is succeeded }}"

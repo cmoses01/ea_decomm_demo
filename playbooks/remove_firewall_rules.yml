@@ -1,0 +1,12 @@
+---
+- name: Remove Firewall Rules Task
+  hosts: localhost
+  tasks:
+    - name: Simulate remove firewall rules task success
+      debug:
+        msg: "Remove firewall rules task succeeded"
+      register: result
+
+    - name: Return success
+      set_fact:
+        task_success: "{{ result is succeeded }}"
